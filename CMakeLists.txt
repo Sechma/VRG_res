@@ -1,14 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 project(VRG_RES)
 
-# Use vcpkg toolchain file to find dependencies
-set(CMAKE_TOOLCHAIN_FILE /home/marek/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "vcpkg toolchain file")
+set(CMAKE_TOOLCHAIN_FILE "/home/marek/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "vcpkg toolchain file")
 
-# Find EnTT
-find_package(EnTT CONFIG REQUIRED)
+include_directories("/home/marek/vcpkg/installed/x64-linux/include")
 
-# Add your executable
 add_executable(vrg_res main.cc utils.cc)
 
-# Link EnTT to your executable
+
+find_package(EnTT CONFIG REQUIRED)
+find_package(CLI11 CONFIG REQUIRED)
+
 target_link_libraries(vrg_res PRIVATE EnTT::EnTT)
+
+target_link_libraries(vrg_res PRIVATE CLI11::CLI11)
