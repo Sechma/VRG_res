@@ -5,7 +5,7 @@ set(CMAKE_TOOLCHAIN_FILE "/home/marek/vcpkg/scripts/buildsystems/vcpkg.cmake" CA
 
 include_directories("/home/marek/vcpkg/installed/x64-linux/include")
 
-add_executable(vrg_res main.cc utils.cc)
+add_executable(vrg_res main.cc utils.cc simulation.cc)
 
 
 find_package(EnTT CONFIG REQUIRED)

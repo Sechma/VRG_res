@@ -3,21 +3,20 @@ VRG interview application project in c++
 
 
 # build
-<br>
-``sh mkdir build`` <br>
-``sh cd build `` <br>
-``sh cmake .. -DCMAKE_TOOLCHAIN_FILE=/home/name/vcpkg/scripts/buildsystems/vcpkg.cmake`` <br>
-``sh make`` <br>
+``mkdir build`` <br>
+``cd build `` <br>
+``cmake .. -DCMAKE_TOOLCHAIN_FILE=/home/name/vcpkg/scripts/buildsystems/vcpkg.cmake`` <br>
+``make`` <br>
 `./main` <br>
 
 # clean
 <br>
-``sh make clean``
+``make clean``
 
 # run
-``sh ./vrg_res -s <shooter_x> <shooter_y> <shooter_z> -g <goal_x> <goal_y> <goal_z> -v <speed_of_shot> -w <weight_of_shot> -e <step_size>``
+``./vrg_res -s <shooter_x> <shooter_y> <shooter_z> -g <goal_x> <goal_y> <goal_z> -v <speed_of_shot> -w <weight_of_shot> -e <step_size>``
 OR
-``sh ./vrg_res
+`` ./vrg_res``
 <br>
 # requirements
 - c++23 >=
