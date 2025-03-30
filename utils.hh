@@ -14,10 +14,15 @@ Project: VRG_RES
 #include <string>
 #include <glm/glm.hpp>
 #include <stdexcept>
+#include <vector>
+#include <iomanip> 
 
 using namespace std;
 
 double readDoubleFromStdin(const string& inputMsg);
 glm::vec3 readVec3FromStdin(const string& inputMsg);
-
+string printVe3(const glm::vec3& v);
+double calculateBulletRadius(double area);
+float calculateAnglePrecision(float radius, float distance);
+bool parseVec3(const std::string& str, glm::vec3& vec);
 #endif

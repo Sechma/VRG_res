@@ -7,6 +7,9 @@ Project: VRG_RES
 
 #include "utils.hh"
 
+using namespace std;
+
+
 // Function to read a 3D vector from stdin
 // will accept if all three values are valid and greater or zero.
 glm::vec3 readVec3FromStdin(const string& inputMsg) {
@@ -63,4 +66,40 @@ double readDoubleFromStdin(const string& inputMsg) {
             return val;
         }
     }
+}
+// Function to print 3-values vector
+string printVe3(const glm::vec3& v) {
+    ostringstream oss;
+    oss << fixed << setprecision(6);
+    oss << v.x << " " << v.y << " " << v.z;
+    return oss.str();
+}
+// Function to calculate bullet radius 
+double calculateBulletRadius(double area) {
+    return sqrt(area / M_PI);
+}
+// Function to calculate angle precision
+float calculateAnglePrecision(float radius, float distance) {
+    float rad = atan(radius / distance); 
+    return rad * (180.0f / M_PI);
+}
+
+// Function for parsing input string "1.0 1.0 1.0" and convert into 3-valued vector
+bool parseVec3(const string& input, glm::vec3& output) {
+    istringstream iss(input);
+    vector<float> values;
+    float val;
+    
+    while (iss >> val) {
+        values.push_back(val);
+    }
+    
+    if (values.size() != 3 || !iss.eof()) {
+        return false;
+    }
+    
+    output.x = values[0];
+    output.y = values[1];
+    output.z = values[2];
+    return true;
 }
